@@ -72,7 +72,8 @@ class PDFController extends Controller
     public function listPDFs()
     {
         // Fetch all exams (PDFs)
-        $exams = Exam::all();
+        // $exams = Exam::all();
+        $exams = Exam::paginate(10); // Suggestions for Improvement for scalability:
         return view('list_pdfs', compact('exams'));
     }
 
